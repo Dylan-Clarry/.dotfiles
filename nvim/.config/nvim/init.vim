@@ -34,5 +34,3 @@ nnoremap <C-k> :cprev<CR>
 " FVF
 nnoremap <leader>pg :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
-
-" testing
