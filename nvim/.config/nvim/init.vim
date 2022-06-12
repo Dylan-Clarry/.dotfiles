@@ -16,6 +16,12 @@ Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+
+" Debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 call plug#end()
 
 " Colourscheme

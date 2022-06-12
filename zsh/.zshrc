@@ -22,6 +22,7 @@ alias vim="nvim"
 alias vconf="vim ~/.config/nvim/init.vim"
 alias zconf="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
+alias sxreload="pkill -USR1 -x sxhkd"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
