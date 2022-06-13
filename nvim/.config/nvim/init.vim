@@ -45,10 +45,5 @@ nnoremap <leader>pg :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <leader>pr :e#<CR>
 
-" HTML
-"inoremap <buffer> <C-i> <esc>:let @9=@"<CR>yiwi<lt><esc>ea></><esc>hp :let @"=@9<CR>F>i
-"inoremap <buffer> <C-o> <esc>:let @9=@"<CR>yiwi<lt><esc>ea></><esc>hp :let @"=@9<CR>F<
-
-
 " CloseTag
 let g:closetag_filenames = '*.html, *.xhtml, *.js, *.jsx'
