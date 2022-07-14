@@ -16,6 +16,7 @@ Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'jiangmiao/auto-pairs'
 
 " Debugging
 Plug 'mfussenegger/nvim-dap'
