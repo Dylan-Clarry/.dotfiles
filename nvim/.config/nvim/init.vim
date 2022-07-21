@@ -17,12 +17,16 @@ Plug 'prettier/vim-prettier'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Debugging
 Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
+
+" LaTeX
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 " Colourscheme
@@ -44,7 +48,10 @@ nnoremap <C-k> :cprev<CR>
 " FVF
 nnoremap <leader>pg :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
-nnoremap <leader>pr :e#<CR>
+nnoremap <leader>pr :e#<cr>
+
+" LaTeX
+nnoremap <leader>lp :LLPStartPreview<cr>
 
 " CloseTag
 let g:closetag_filenames = '*.html, *.xhtml, *.js, *.jsx'

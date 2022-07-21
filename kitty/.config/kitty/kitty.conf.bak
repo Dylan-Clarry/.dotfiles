@@ -6,9 +6,3 @@ copy_on_select          yes
 
 # theme and appearance
 background_opacity      .85
-
-
-# BEGIN_KITTY_THEME
-# Catppuccin
-include current-theme.conf
-# END_KITTY_THEME
