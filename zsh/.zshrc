@@ -19,6 +19,7 @@ export PATH=$PATH:$GOROOT/bin
 
 #Aliases
 alias vim="nvim"
+alias v="nvim"
 alias vrc="vim ~/.config/nvim/init.vim"
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
@@ -56,3 +57,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
+
+export NVM_DIR="/home/dylan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
