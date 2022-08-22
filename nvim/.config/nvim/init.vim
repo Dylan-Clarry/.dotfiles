@@ -26,6 +26,10 @@ Plug 'leoluz/nvim-dap-go'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
 " LaTeX
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
@@ -49,10 +53,12 @@ nnoremap <C-k> :cprev<CR>
 " FVF
 nnoremap <leader>pg :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
-nnoremap <leader>pr :e#<cr>
+nnoremap <leader>pp :e#<cr>
 
 " LaTeX
-nnoremap <leader>lp :LLPStartPreview<cr>
+nnoremap <leader>ll :LLPStartPreview<cr>
+autocmd FileType tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Preview'
 
 " CloseTag
 let g:closetag_filenames = '*.html, *.xhtml, *.js, *.jsx'
