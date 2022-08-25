@@ -20,13 +20,11 @@ export PATH=$PATH:$GOROOT/bin
 #Aliases
 alias vim="nvim"
 alias v="nvim"
-alias vrc="vim ~/.config/nvim/init.vim"
+alias vrc="vim ~/.config/nvim/init.lua"
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias sxreload="pkill -USR1 -x sxhkd"
 alias resetaudio="systemctl --user restart wireplumber pipewire pipewire-pulse && rm -r ~/.config/pulse"
-alias ypwd="pwd | xclip"
-alias ppwd="cd \"`xclip -o`\""
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e

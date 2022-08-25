@@ -153,6 +153,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dylan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-javascript"] = {
+    loaded = true,
+    path = "/home/dylan/.local/share/nvim/site/pack/packer/start/vim-javascript",
+    url = "https://github.com/pangloss/vim-javascript"
+  },
+  ["vim-jsx"] = {
+    loaded = true,
+    path = "/home/dylan/.local/share/nvim/site/pack/packer/start/vim-jsx",
+    url = "https://github.com/mxw/vim-jsx"
   }
 }
 
