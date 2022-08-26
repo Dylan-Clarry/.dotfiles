@@ -7,6 +7,9 @@ super + r
 # Brave
 super + b
     brave-browser
+# Brave Incognito
+super + p
+    brave-browser --incognito
 # Firefox
 super + f
     firefox
