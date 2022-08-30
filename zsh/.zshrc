@@ -25,6 +25,9 @@ alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias sxreload="pkill -USR1 -x sxhkd"
 alias resetaudio="systemctl --user restart wireplumber pipewire pipewire-pulse && rm -r ~/.config/pulse"
+alias gaa="git add . && git status"
+alias gc="git commit -m"
+alias gp="git push"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
