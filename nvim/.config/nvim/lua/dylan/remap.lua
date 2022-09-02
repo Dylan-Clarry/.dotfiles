@@ -10,6 +10,8 @@ local nmap = Remap.nmap
 nnoremap('<leader><cr>', ':so %<cr>')
 nnoremap('<leader>;e', ':Ex<cr>')
 nnoremap('<leader>;r', ':Rex<cr>')
+nnoremap('<C-d>', '<C-d>zz')
+nnoremap('<C-u>', '<C-u>zz')
 
 vnoremap("J", ":m '>+1<cr>gv=gv")
 vnoremap("K", ":m '<-2<cr>gv=gv")
