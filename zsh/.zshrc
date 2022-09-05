@@ -1,6 +1,6 @@
 # Set up the prompt
 
-#autoload -Uz vcs_info
+autoload -Uz vcs_info
 
 setopt histignorealldups sharehistory PROMPT_SUBST
 
@@ -28,6 +28,11 @@ alias resetaudio="systemctl --user restart wireplumber pipewire pipewire-pulse &
 alias gaa="git add . && git status"
 alias gc="git commit -m"
 alias gp="git push"
+alias fbg="feh --bg-fill"
+alias ls="ls --color=auto"
+alias coomer="fbg ~/Pictures/bg_01.jpg"
+alias nicerocket="fbg ~/Pictures/nicerocket.png"
+alias safemode="fbg ~/Pictures/monsters.webp"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
