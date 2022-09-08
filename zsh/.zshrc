@@ -15,12 +15,12 @@ export EDITOR='nvim'
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOBIN:$GOROOT/bin
 
 #Aliases
 alias vim="nvim"
 alias v="nvim"
-alias vrc="vim ~/.config/nvim/init.lua"
+alias vrc="cd ~/.config/nvim && v ."
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias sxreload="pkill -USR1 -x sxhkd"
@@ -33,6 +33,8 @@ alias ls="ls --color=auto"
 alias coomer="fbg ~/Pictures/bg_01.jpg"
 alias nicerocket="fbg ~/Pictures/nicerocket.png"
 alias safemode="fbg ~/Pictures/monsters.webp"
+alias ssuspend="systemctl suspend"
+alias shibernate="systemctl hibernate"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
