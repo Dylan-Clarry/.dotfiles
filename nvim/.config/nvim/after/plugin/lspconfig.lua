@@ -58,6 +58,14 @@ lsp.gopls.setup{
     on_attach = on_attach,
 }
 
+-- JS/TS
+lsp.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "javascript", "javascript.jsx", "javascriptreact", "typescript", "typescript.tsx", "typescriptreact" },
+    cmd = { "typescript-language-server", "--stdio" }
+}
+
 -- tailwind
 lsp.tailwindcss.setup {}
 
