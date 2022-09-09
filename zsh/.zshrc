@@ -15,7 +15,9 @@ export EDITOR='nvim'
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN:$GOROOT/bin
+
+# Path
+export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server
 
 #Aliases
 alias vim="nvim"
@@ -71,3 +73,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export NVM_DIR="/home/dylan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+-e 
+alias luamake=/home/dylan/lua-language-server/3rd/luamake/luamake

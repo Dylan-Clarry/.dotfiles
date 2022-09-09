@@ -1,16 +1,12 @@
 local status, lsp = pcall(require, 'lspconfig')
 if(not status) then return end
 
-local lsp_installer = require("nvim-lsp-installer")
 local protocol = require('vim.lsp.protocol')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local Keymap = require('dylan.keymap')
 local nnoremap = Keymap.nnoremap
-local vnoremap = Keymap.vnoremap
 local inoremap = Keymap.inoremap
-local xnoremap = Keymap.xnoremap
-local nmap = Keymap.nmap
 
 -- lSP autocomplete
 vim.opt.completeopt = { "menu", "menuone", "noselect" } -- setting vim values
@@ -27,7 +23,7 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<C-cr>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -38,8 +34,7 @@ cmp.setup({
 })
 
 -- LSP server setup
-local on_attach = function()
-
+local on_attach = function(client, bufnr)
     -- mappings
     -- see ':h vim.lsp.*' for documentation of the below functions
     nnoremap("K", vim.lsp.buf.hover, {buffer = 0})
@@ -50,10 +45,49 @@ local on_attach = function()
     nnoremap("<leader>dn", vim.diagnostic.goto_next, {buffer = 0})
     nnoremap("<leader>dp", vim.diagnostic.goto_prev, {buffer = 0})
     nnoremap("<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer = 0})
+    print(client.name, "attached")
+
+    if client.server_capabilities.document_formatting then
+        vim.cmd([[
+        augroup formatting
+        autocmd! * <buffer>
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+        autocmd BufWritePre <buffer> lua OrganizeImports(1000)
+        augroup END
+        ]])
+    end
 end
 
+-- lua
+local sumneko_root_path = "/home/dylan/.personal/sumneko"
+local sumneko_binary = sumneko_root_path .. "/bin/lua-langauge-server"
+lsp.sumneko_lua.setup {
+    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT)
+                version = "LuaJIT",
+                -- setup your lua path
+                path = vim.split(package.path, ";"),
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { "vim" },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                },
+            },
+        },
+    },
+}
+
 -- golang
-lsp.gopls.setup{
+lsp.gopls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
@@ -61,40 +95,29 @@ lsp.gopls.setup{
 -- JS/TS
 lsp.tsserver.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+
+        -- turn off tsserver formatting, null ls used for prettier/eslint
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.documentFormattingProvider = false
+        client.resolved_capabilities.documentRangeFormattingProvider = false
+    end,
     filetypes = { "javascript", "javascript.jsx", "javascriptreact", "typescript", "typescript.tsx", "typescriptreact" },
     cmd = { "typescript-language-server", "--stdio" }
 }
 
 -- tailwind
-lsp.tailwindcss.setup {}
+--lsp.tailwindcss.setup {}
 
-lsp.flow.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
+--lsp.flow.setup {
+--    capabilities = capabilities,
+--    on_attach = on_attach,
+--}
 
-lsp.sourcekit.setup {
-    on_attach = on_attach,
-}
-
--- Sumneko_lua only works with lsp installer??
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    if server.name == "sumneko_lua" then
-        opts = {
-            on_attach = on_attach,
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { 'vim', 'use' }
-                    },
-                },
-            },
-        }
-    end
-    server:setup(opts)
-end)
+--lsp.sourcekit.setup {
+--    on_attach = on_attach,
+--}
 
 -- diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
