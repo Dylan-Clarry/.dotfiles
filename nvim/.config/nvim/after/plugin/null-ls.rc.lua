@@ -9,7 +9,6 @@ local sources = {
 }
 
 local on_attach = function(client)
-    print("client", client.name)
     if client.resolved_capabilities.document_formatting then
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
