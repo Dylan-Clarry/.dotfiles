@@ -4,11 +4,20 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use 'gruvbox-community/gruvbox'
+
+    -- The basics
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
+    use 'nvim-lua/plenary.nvim' -- common utilities
+
+    -- Colors (mmm)
+    use 'gruvbox-community/gruvbox'
+    use { 'catppuccin/nvim', as = 'catppuccin' }
+
+    -- Thanks Prime
+    use 'ThePrimeagen/git-worktree.nvim'
+    use 'ThePrimeagen/harpoon'
 
     -- autocomplete
     use 'hrsh7th/nvim-cmp' -- Completion
@@ -31,7 +40,6 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
 
-    use 'nvim-lua/plenary.nvim' -- common utilities
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
     use 'pangloss/vim-javascript'
