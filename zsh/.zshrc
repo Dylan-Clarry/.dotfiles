@@ -33,13 +33,7 @@ alias gp="git push"
 alias fbg="feh --bg-fill"
 alias ls="ls --color=auto"
 alias coomer="fbg ~/Pictures/bg_01.jpg"
-alias nicerocket="fbg ~/Pictures/nicerocket.png"
 alias safemode="fbg ~/Pictures/monsters.webp"
-alias ssuspend="systemctl suspend"
-alias shibernate="systemctl hibernate"
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
