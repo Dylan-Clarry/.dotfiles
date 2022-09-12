@@ -33,8 +33,9 @@ alias gc="git commit -m"
 alias gp="git push"
 alias fbg="feh --bg-fill"
 alias ls="ls --color=auto"
+alias safemode="fbg ~/Pictures/nebula-zeppelin.jpg"
 alias coomer="fbg ~/Pictures/bg_01.jpg"
-alias safemode="fbg ~/Pictures/monsters.webp"
+alias monsters="fbg ~/Pictures/monsters.webp"
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000

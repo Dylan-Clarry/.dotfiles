@@ -21,6 +21,9 @@ set.hlsearch=false
 set.incsearch=true
 set.smartindent=true
 set.wrap=false
+set.cmdheight=1
+set.undodir = os.getenv('HOME') .. '/.vim/undodir'
+set.undofile = true
 
 vim.g.mapleader=" "
 vim.g.dylan_colorscheme = "catppuccin"
@@ -31,6 +34,7 @@ nnoremap('<leader><cr>', ':so %<cr>')
 nnoremap('<leader>e', ':Lex<cr>')
 nnoremap('<C-d>', '<C-d>zz')
 nnoremap('<C-u>', '<C-u>zz')
+nnoremap('<leader>u', ':UndotreeShow<cr>')
 
 -- windows
 nnoremap('<leader>;v', ':Vex')

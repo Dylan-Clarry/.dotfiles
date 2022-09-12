@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-lua/plenary.nvim' -- common utilities
+    use 'mbbill/undotree'
 
     -- Colors (mmm)
     use 'gruvbox-community/gruvbox'
