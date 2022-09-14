@@ -31,13 +31,13 @@ vim.g.dylan_colorscheme = "catppuccin"
 -- regular keymaps
 -- ====
 nnoremap('<leader><cr>', ':so %<cr>')
-nnoremap('<leader>e', ':Lex<cr>')
+nnoremap('<leader>e', ':Ex<cr>')
 nnoremap('<C-d>', '<C-d>zz')
 nnoremap('<C-u>', '<C-u>zz')
 nnoremap('<leader>u', ':UndotreeShow<cr>')
 
 -- windows
-nnoremap('<leader>;v', ':Vex')
+nnoremap('<leader>;v', ':Vex<cr>')
 nnoremap('<C-h>', '<C-w>h')
 nnoremap('<C-j>', '<C-w>j')
 nnoremap('<C-k>', '<C-w>k')

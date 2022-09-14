@@ -35,6 +35,8 @@ cmp.setup({
 
 -- LSP server setup
 local on_attach = function(client, bufnr)
+    print(client.name, "attached")
+
     -- mappings
     -- see ':h vim.lsp.*' for documentation of the below functions
     nnoremap("K", vim.lsp.buf.hover, {buffer = 0})
@@ -45,7 +47,6 @@ local on_attach = function(client, bufnr)
     nnoremap("<leader>dn", vim.diagnostic.goto_next, {buffer = 0})
     nnoremap("<leader>dp", vim.diagnostic.goto_prev, {buffer = 0})
     nnoremap("<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer = 0})
-    print(client.name, "attached")
 
     if client.server_capabilities.document_formatting then
         vim.cmd([[
