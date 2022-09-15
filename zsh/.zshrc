@@ -33,7 +33,7 @@ alias gc="git commit -m"
 alias gp="git push"
 alias fbg="feh --bg-fill"
 alias ls="ls --color=auto"
-alias safemode="fbg ~/Pictures/nebula-zeppelin.jpg"
+alias safemode="fbg ~/Pictures/bg_02"
 alias coomer="fbg ~/Pictures/bg_01.jpg"
 alias monsters="fbg ~/Pictures/monsters.webp"
 
