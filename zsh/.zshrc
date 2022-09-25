@@ -35,10 +35,14 @@ alias gaa="git add . && git status"
 alias gc="git commit -m"
 alias gp="git push"
 alias fbg="feh --bg-fill"
-# Linux
-#alias ls="ls --color=auto"
-# Mac OS
-alias ls="ls -G"
+
+lsauto="ls --color=auto"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    lsauto="ls -G"
+fi
+alias ls=$lsauto
+alias la="ls -la"
+
 alias safemode="fbg ~/Pictures/bg_02.jpg"
 alias coomer="fbg ~/Pictures/bg_01.jpg"
 alias monsters="fbg ~/Pictures/monsters.webp"
