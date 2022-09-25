@@ -31,18 +31,23 @@ alias cr="cargo run"
 
 alias sxreload="pkill -USR1 -x sxhkd"
 alias resetaudio="systemctl --user restart wireplumber pipewire pipewire-pulse && rm -r ~/.config/pulse"
+
+# git
 alias gaa="git add . && git status"
 alias gc="git commit -m"
 alias gp="git push"
 alias fbg="feh --bg-fill"
 
-lsauto="ls --color=auto"
+# directories
+lsauto="ls --color=auto -F"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     lsauto="ls -G"
 fi
 alias ls=$lsauto
-alias la="ls -la"
+alias la="ls -lhF"
+alias mkdir="mkdir -p"
 
+# wallpaper
 alias safemode="fbg ~/Pictures/bg_02.jpg"
 alias coomer="fbg ~/Pictures/bg_01.jpg"
 alias monsters="fbg ~/Pictures/monsters.webp"
