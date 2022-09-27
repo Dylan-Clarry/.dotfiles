@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
     -- Colors (mmm)
     use 'gruvbox-community/gruvbox'
     use { 'catppuccin/nvim', as = 'catppuccin' }
+    use 'norcalli/nvim-colorizer.lua'
 
     -- Thanks Prime
     use 'ThePrimeagen/git-worktree.nvim'

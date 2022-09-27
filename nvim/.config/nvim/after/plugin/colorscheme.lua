@@ -16,3 +16,6 @@ end
 
 -- color set in base init.lua
 setColorScheme(vim.g.dylan_colorscheme)
+
+-- colrizer (color preview)
+require('colorizer').setup()
