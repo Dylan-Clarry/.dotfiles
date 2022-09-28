@@ -35,6 +35,7 @@ nnoremap('<leader>e', ':Ex<cr>')
 nnoremap('<C-d>', '<C-d>zz')
 nnoremap('<C-u>', '<C-u>zz')
 nnoremap('<leader>u', ':UndotreeShow<cr>')
+nnoremap('<leader>;r', ':e#<CR>')
 
 -- windows
 nnoremap('<leader>;v', ':Vex<cr>')
