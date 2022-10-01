@@ -23,9 +23,10 @@ export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-se
 alias vim="nvim"
 alias v="nvim"
 alias t="tmux"
-alias vrc="cd ~/.config/nvim && v ."
+alias vrc="cd ~/.dotfiles/nvim && v ."
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
+alias dot="cd ~/.dotfiles && v ."
 
 alias cr="cargo run"
 alias sussy="systemctl suspend"
