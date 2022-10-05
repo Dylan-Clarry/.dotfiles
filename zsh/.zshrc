@@ -44,7 +44,8 @@ lsauto="ls --color=auto -F"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     lsauto="ls -G"
 fi
-alias ls=$lsauto
+alias l=$lsauto
+alias ll=$lsauto
 alias la="ls -lhF"
 alias mkdir="mkdir -p"
 
