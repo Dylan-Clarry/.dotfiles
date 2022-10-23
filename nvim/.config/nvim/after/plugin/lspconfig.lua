@@ -131,12 +131,13 @@ vim.lsp.diagnostic.on_publish_diagnostics, {
 )
 
 -- diagnostic symbols
+-- ONLY USE FOR SYMBOLS
 --local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-local signs = { Error = "E ", Warn = "W ", Hint = "H ", Info = "I " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = '', numhl = "" })
-end
+--local signs = { Error = "E ", Warn = "W ", Hint = "H ", Info = "I " }
+--for type, icon in pairs(signs) do
+--    local hl = "DiagnosticSign" .. type
+--    vim.fn.sign_define(hl, { text = icon, texthl = "texthl", numhl = "hl" })
+--end
 
 vim.diagnostic.config({
     virtual_text = {
