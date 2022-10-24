@@ -36,6 +36,7 @@ nnoremap('<C-d>', '<C-d>zz')
 nnoremap('<C-u>', '<C-u>zz')
 nnoremap('<leader>u', ':UndotreeShow<cr>')
 nnoremap('<leader>;r', ':e#<CR>')
+nnoremap('<leader>ff', ':lua vim.lsp.buf.formatting()<cr>')
 
 -- windows
 nnoremap('<leader>;v', ':Vex<cr>')

@@ -109,7 +109,7 @@ lsp.tsserver.setup {
 }
 
 -- tailwind
---lsp.tailwindcss.setup {}
+lsp.tailwindcss.setup {}
 
 --lsp.flow.setup {
 --    capabilities = capabilities,
@@ -131,7 +131,6 @@ vim.lsp.diagnostic.on_publish_diagnostics, {
 )
 
 -- diagnostic symbols
--- ONLY USE FOR SYMBOLS
 --local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 --local signs = { Error = "E ", Warn = "W ", Hint = "H ", Info = "I " }
 --for type, icon in pairs(signs) do
