@@ -38,6 +38,15 @@ nnoremap('<leader>u', ':UndotreeShow<cr>')
 nnoremap('<leader>;r', ':e#<CR>')
 nnoremap('<leader>ff', ':lua vim.lsp.buf.formatting()<cr>')
 
+-- yank to clipboard
+nnoremap('<leader>y', '\"+y')
+vnoremap('<leader>y', '\"+y')
+nmap('<leader>Y', '\"+Y')
+
+-- delete no cut
+nnoremap('<leader>d', '\"_d')
+vnoremap('<leader>d', '\"_d')
+
 -- windows
 nnoremap('<leader>;v', ':Vex<cr>')
 nnoremap('<C-h>', '<C-w>h')
