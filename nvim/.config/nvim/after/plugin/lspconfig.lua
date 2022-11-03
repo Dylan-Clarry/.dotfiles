@@ -1,8 +1,8 @@
 local status, lsp = pcall(require, 'lspconfig')
-if(not status) then return end
+if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local Keymap = require('dylan.keymap')
 local nnoremap = Keymap.nnoremap
@@ -10,7 +10,7 @@ local inoremap = Keymap.inoremap
 
 -- lSP autocomplete
 vim.opt.completeopt = { "menu", "menuone", "noselect" } -- setting vim values
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
     snippet = {
@@ -39,14 +39,14 @@ local on_attach = function(client, bufnr)
 
     -- mappings
     -- see ':h vim.lsp.*' for documentation of the below functions
-    nnoremap("K", vim.lsp.buf.hover, {buffer = 0})
-    nnoremap("gd", vim.lsp.buf.definition, {buffer = 0})
-    nnoremap("gT", vim.lsp.buf.type_definition, {buffer = 0})
-    nnoremap("gi", vim.lsp.buf.implementation, {buffer = 0})
-    nnoremap("<leader>r", vim.lsp.buf.rename, {buffer = 0})
-    nnoremap("<leader>dn", vim.diagnostic.goto_next, {buffer = 0})
-    nnoremap("<leader>dp", vim.diagnostic.goto_prev, {buffer = 0})
-    nnoremap("<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer = 0})
+    nnoremap("K", vim.lsp.buf.hover, { buffer = 0 })
+    nnoremap("gd", vim.lsp.buf.definition, { buffer = 0 })
+    nnoremap("gT", vim.lsp.buf.type_definition, { buffer = 0 })
+    nnoremap("gi", vim.lsp.buf.implementation, { buffer = 0 })
+    nnoremap("<leader>r", vim.lsp.buf.rename, { buffer = 0 })
+    nnoremap("<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })
+    nnoremap("<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })
+    nnoremap("<leader>dl", "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
 
     if client.server_capabilities.document_formatting then
         vim.cmd([[
@@ -59,29 +59,35 @@ local on_attach = function(client, bufnr)
     end
 end
 
+local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
+local enable_format_on_save = function(_, bufnr)
+    vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup_format,
+        buffer = bufnr,
+        callback = function()
+            vim.lsp.buf.format({ bufnr = bufnr })
+        end,
+    })
+end
+
 -- lua
-local sumneko_root_path = "/home/dylan/.personal/sumneko"
-local sumneko_binary = sumneko_root_path .. "/bin/lua-langauge-server"
 lsp.sumneko_lua.setup {
-    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        --enable_format_on_save(client, bufnr)
+    end,
     settings = {
         Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT)
-                version = "LuaJIT",
-                -- setup your lua path
-                path = vim.split(package.path, ";"),
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { "vim" },
+            dignostics = {
+                -- language server recognize 'vim' global
+                globals = { 'vim' },
             },
             workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                },
+                -- make server aware of nvim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false
             },
         },
     },
@@ -109,7 +115,12 @@ lsp.tsserver.setup {
 }
 
 -- tailwind
-lsp.tailwindcss.setup {}
+lsp.tailwindcss.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+lsp.astro.setup {}
 
 --lsp.flow.setup {
 --    capabilities = capabilities,
@@ -122,7 +133,7 @@ lsp.tailwindcss.setup {}
 
 -- diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-vim.lsp.diagnostic.on_publish_diagnostics, {
+    vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     update_in_insert = false,
     virtual_text = { spacing = 4, prefix = "●" },

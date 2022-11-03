@@ -35,6 +35,10 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+
+    -- JSX formatting
     use 'jose-elias-alvarez/null-ls.nvim' -- use nvim as a language server to inject lsp diagnostics, code actions, and more via lua
     use 'MunifTanjim/prettier.nvim' -- prettier plugin for nvim's built-in lsp client
 
