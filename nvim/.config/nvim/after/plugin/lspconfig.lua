@@ -6,11 +6,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 local Keymap = require('dylan.keymap')
 local nnoremap = Keymap.nnoremap
-local inoremap = Keymap.inoremap
 
 -- lSP autocomplete
 vim.opt.completeopt = { "menu", "menuone", "noselect" } -- setting vim values
-local cmp = require 'cmp'
+local cmp = require('cmp')
 
 cmp.setup({
     snippet = {
@@ -45,6 +44,7 @@ local on_attach = function(client, bufnr)
     nnoremap("gi", vim.lsp.buf.implementation, { buffer = 0 })
     nnoremap("<leader>r", vim.lsp.buf.rename, { buffer = 0 })
     nnoremap("<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })
+    nnoremap("<leader>dc", vim.diagnostic.open_float, { buffer = 0 })
     nnoremap("<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })
     nnoremap("<leader>dl", "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
 
@@ -80,7 +80,7 @@ lsp.sumneko_lua.setup {
     end,
     settings = {
         Lua = {
-            dignostics = {
+            diagnostics = {
                 -- language server recognize 'vim' global
                 globals = { 'vim' },
             },
