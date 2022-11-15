@@ -50,11 +50,11 @@ alias la="ls -lhF"
 alias mkdir="mkdir -p"
 
 # wallpaper
-alias safemode="fbg ~/Pictures/wallpapers/bg_02.jpg"
-alias coomer="fbg ~/Pictures/wallpapers/bg_01.jpg"
-alias lulwut="fbg ~/Pictures/wallpapers/lulwut.png"
-alias lucifer="fbg ~/Pictures/wallpapers/lucifer.jpg"
-alias monsters="fbg ~/Pictures/wallpapers/monsters.webp"
+alias safemode="fbg ~/wallpapers/bg_02.jpg"
+alias coomer="fbg ~/wallpapers/bg_01.jpg"
+alias lulwut="fbg ~/wallpapers/lulwut.png"
+alias lucifer="fbg ~/wallpapers/lucifer.jpg"
+alias monsters="fbg ~/wallpapers/monsters.webp"
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
