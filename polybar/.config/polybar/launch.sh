@@ -7,7 +7,11 @@ killall -q polybar
 # Wait until the processes have been shutdown
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch bar1 and bar2
-polybar main -c ~/.config/polybar/config.ini &
-polybar secondary -c ~/.config/polybar/config.ini &
-polybar -r laptop -c ~/.config/polybar/config.ini &
+# Launch bar across monitors
+if type "xrandr"; then
+    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar -r basedbar -c ~/.config/polybar/config.ini &
+    done
+else
+    polybar -r basedbar -c ~/.config/polybar/config.ini &
+fi
