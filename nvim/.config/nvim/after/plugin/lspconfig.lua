@@ -97,6 +97,11 @@ lsp.sumneko_lua.setup {
 lsp.gopls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
+    settings = {
+        gopls = {
+            gofumpt = true
+        }
+    }
 }
 
 -- JS/TS
