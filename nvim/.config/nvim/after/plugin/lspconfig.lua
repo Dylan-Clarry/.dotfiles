@@ -126,6 +126,7 @@ lsp.tailwindcss.setup {
 }
 
 lsp.astro.setup {}
+lsp.clangd.setup {}
 
 --lsp.flow.setup {
 --    capabilities = capabilities,

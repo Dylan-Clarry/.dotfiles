@@ -17,12 +17,14 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
 # Path
-export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server
+export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH
+#export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server
 
 #Aliases
 alias vim="nvim"
 alias v="nvim"
 alias t="tmux"
+alias tmain="tmux attach-session -t main"
 alias vrc="cd ~/.dotfiles/nvim/.config/nvim/ && v ."
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
