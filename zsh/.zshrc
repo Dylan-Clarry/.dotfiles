@@ -30,6 +30,7 @@ alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias dot="cd ~/.dotfiles && v ."
 
+alias nrd="npm run dev"
 alias cr="cargo run"
 alias sussy="systemctl suspend"
 alias sxreload="pkill -USR1 -x sxhkd"
@@ -91,3 +92,4 @@ export NVM_DIR="/home/dylan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias luamake=/home/dylan/lua-language-server/3rd/luamake/luamake
+PATH="$HOME/.local/bin:$PATH"
