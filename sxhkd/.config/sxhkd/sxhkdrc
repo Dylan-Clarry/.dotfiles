@@ -58,3 +58,7 @@ super + {Left,Down,Up,Right}
 # Volume
 super + {comma,period}
     amixer -D pulse sset Master 5%{-,+}
+
+# Screenshot
+super + z
+    scrot -s $HOME/Pictures/Screenshots/'screen_%H-%M-%S.png'

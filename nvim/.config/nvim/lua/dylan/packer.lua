@@ -50,4 +50,7 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope-file-browser.nvim'
     use 'pangloss/vim-javascript'
     use 'mxw/vim-jsx'
+
+    -- langs/framworks
+    use 'wuelnerdotexe/vim-astro'
 end)

@@ -204,6 +204,11 @@ _G.packer_plugins = {
     path = "/home/dylan/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-astro"] = {
+    loaded = true,
+    path = "/home/dylan/.local/share/nvim/site/pack/packer/start/vim-astro",
+    url = "https://github.com/wuelnerdotexe/vim-astro"
+  },
   ["vim-javascript"] = {
     loaded = true,
     path = "/home/dylan/.local/share/nvim/site/pack/packer/start/vim-javascript",
