@@ -16,6 +16,9 @@ super + f
 # Gimp
 super + g
     gimp
+# Open .
+super + o
+    open .
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
