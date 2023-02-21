@@ -47,6 +47,9 @@ nmap('<leader>Y', '\"+Y')
 nnoremap('<leader>d', '\"_d')
 vnoremap('<leader>d', '\"_d')
 
+-- formatting
+nnoremap('<leader>fp', ':Prettier<cr>')
+
 -- windows
 nnoremap('<leader>;v', ':Vex<cr>')
 nnoremap('<C-h>', '<C-w>h')
