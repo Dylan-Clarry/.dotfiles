@@ -111,9 +111,9 @@ lsp.tsserver.setup {
         on_attach(client, bufnr)
 
         -- turn off tsserver formatting, null ls used for prettier/eslint
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.documentFormattingProvider = false
-        client.resolved_capabilities.documentRangeFormattingProvider = false
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
     end,
     filetypes = { "javascript", "javascript.jsx", "javascriptreact", "typescript", "typescript.tsx", "typescriptreact" },
     cmd = { "typescript-language-server", "--stdio" }
