@@ -29,7 +29,7 @@ alias vrc="cd ~/.dotfiles/nvim/.config/nvim/ && v ."
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias dot="cd ~/.dotfiles && v ."
-alias ferris="cd && cd qmk_firmware/keyboards/ferris/keymaps/default && v ."
+alias keeb="cd && cd qmk_firmware/keyboards/ferris/keymaps/default && v ."
 
 alias nrd="npm run dev"
 alias cr="cargo run"
