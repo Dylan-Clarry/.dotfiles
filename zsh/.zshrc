@@ -31,6 +31,10 @@ alias zsrc="source ~/.zshrc"
 alias dot="cd ~/.dotfiles && v ."
 alias keeb="cd && cd qmk_firmware/keyboards/ferris/keymaps/default && v ."
 
+# window manager
+alias wm-r="bspc wm -r"
+alias sx-r="pkill -USR1 -x sxhkd"
+
 alias nrd="npm run dev"
 alias cr="cargo run"
 alias sussy="systemctl suspend"
