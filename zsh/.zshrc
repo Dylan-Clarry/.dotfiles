@@ -46,6 +46,7 @@ alias gaa="git add . && git status"
 alias gc="git commit -m"
 alias gp="git push"
 alias fbg="feh --bg-fill"
+alias gaac="gaa && gc \"quick push\" && gp origin main"
 
 # directories
 lsauto="ls --color=auto -F"
