@@ -40,7 +40,6 @@ local on_attach = function(client, bufnr)
     -- see ':h vim.lsp.*' for documentation of the below functions
     nnoremap("K", vim.lsp.buf.hover, { buffer = 0 })
     nnoremap("gd", vim.lsp.buf.definition, { buffer = 0 })
-    nnoremap("gg", vim.lsp.buf.definition, { buffer = 0 })
     nnoremap("gT", vim.lsp.buf.type_definition, { buffer = 0 })
     nnoremap("gi", vim.lsp.buf.implementation, { buffer = 0 })
     nnoremap("<leader>r", vim.lsp.buf.rename, { buffer = 0 })
