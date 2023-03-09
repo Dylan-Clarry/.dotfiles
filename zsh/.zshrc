@@ -55,7 +55,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 alias l=$lsauto
 alias ll=$lsauto
-alias la="ls -lhF"
+alias la="l -lhF"
 alias mkdir="mkdir -p"
 
 # wallpaper
