@@ -104,6 +104,15 @@ lsp.gopls.setup {
     }
 }
 
+-- rust analyzer
+lsp.rust_analyzer.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = {
+        "rust", "run", "stable", "rust-analyzer",
+    }
+}
+
 -- JS/TS
 lsp.tsserver.setup {
     capabilities = capabilities,
