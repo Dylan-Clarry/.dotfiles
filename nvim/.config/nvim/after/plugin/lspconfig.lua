@@ -109,7 +109,7 @@ lsp.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     cmd = {
-        "rust", "run", "stable", "rust-analyzer",
+        "rustup", "run", "stable", "rust-analyzer",
     }
 }
 
