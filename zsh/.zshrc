@@ -30,6 +30,8 @@ alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias dot="cd ~/.dotfiles && v ."
 alias keeb="cd && cd ~/.dotfiles/keyboard/qmk_firmware/keyboards/ferris/keymaps/default && v ."
+alias setbg="feh --bg-fill"
+alias qflash="qmk compile && qmk flash"
 
 # window manager
 alias wm-r="bspc wm -r"
@@ -45,7 +47,6 @@ alias resetaudio="systemctl --user restart wireplumber pipewire pipewire-pulse &
 alias gaa="git add . && git status"
 alias gc="git commit -m"
 alias gp="git push"
-alias fbg="feh --bg-fill"
 alias gaac="gaa && gc \"quick push\" && gp origin main"
 
 # directories
