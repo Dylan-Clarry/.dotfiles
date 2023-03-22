@@ -42,6 +42,8 @@ alias cr="cargo run"
 alias sussy="systemctl suspend"
 alias sxreload="pkill -USR1 -x sxhkd"
 alias resetaudio="systemctl --user restart wireplumber pipewire pipewire-pulse && rm -r ~/.config/pulse"
+alias audiosource="pavucontrol"
+alias audiosrc="pavucontrol"
 
 # git
 alias gaa="git add . && git status"
