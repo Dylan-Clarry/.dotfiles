@@ -87,13 +87,13 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 const uint16_t PROGMEM esc_combo[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM cd_combo[] = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
-const uint16_t PROGMEM rcd_combo[] = {KC_R, KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C,  COMBO_END};
 
 const uint16_t PROGMEM st_combo[] = {KC_S, KC_T, COMBO_END};
 const uint16_t PROGMEM rs_combo[] = {KC_R, KC_S, COMBO_END};
 const uint16_t PROGMEM rc_combo[] = {KC_R, KC_C, COMBO_END};
 const uint16_t PROGMEM ar_combo[] = {KC_A, KC_R, COMBO_END};
-const uint16_t PROGMEM arc_combo[] = {KC_A, KC_R, KC_C, COMBO_END};
+const uint16_t PROGMEM zx_combo[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM rst_combo[] = {KC_R, KC_S, KC_T, COMBO_END};
 
 const uint16_t PROGMEM ne_combo[] = {KC_N, KC_E, COMBO_END};
@@ -106,14 +106,14 @@ const uint16_t PROGMEM nei_combo[] = {KC_N, KC_E, KC_I, COMBO_END};
 combo_t key_combos[] = {
     [COMBO_ESC] = COMBO(esc_combo, KC_ESC),
     [COMBO_GTS] = COMBO(cd_combo, MO(3)),
-    [COMBO_SGTS] = COMBO(rcd_combo, MO(4)),
+    [COMBO_SGTS] = COMBO(xc_combo, MO(4)),
     [COMBO_NUMPAD] = COMBO(sd_combo, MO(5)),
 
     [COMBO_LCTL] = COMBO(st_combo, KC_LCTL),
     [COMBO_LSFT] = COMBO(rs_combo, KC_LSFT),
     [COMBO_LALT] = COMBO(rc_combo, KC_LALT),
     [COMBO_LGUI] = COMBO(ar_combo, KC_LGUI),
-    [COMBO_LALTGUI] = COMBO(arc_combo, LALT(KC_LGUI)),
+    [COMBO_LALTGUI] = COMBO(zx_combo, LALT(KC_LGUI)),
     [COMBO_LCTLSFT] = COMBO(rst_combo, LSFT(KC_LCTL)),
 
     [COMBO_RCTL] = COMBO(ne_combo, KC_RCTL),
