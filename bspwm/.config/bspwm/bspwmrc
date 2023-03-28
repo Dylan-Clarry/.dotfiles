@@ -7,10 +7,6 @@ pgrep -x picom > /dev/null || picom --experimental-backends &
 feh --bg-fill ~/wallpapers/lucifer.jpg &
 ~/.config/polybar/launch.sh &
 
-# set the device number to match the current running output device
-device=$( pactl list short sinks | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,' | head -n 1 )
-echo "device=$device" >> ~/.config/polybar/config.ini
-
 # xrandr --output HDMI-0 --left-of DP-0 --primary
 xrandr --output DP-0 --primary --mode 1920x1080 --rotate normal --output HDMI-0 --mode 1920x1080 --rotate normal --left-of DP-0
 bspc wm -O DP-0 HDMI-0
