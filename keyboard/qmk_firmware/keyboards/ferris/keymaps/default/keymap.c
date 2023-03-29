@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [2] = LAYOUT_split_3x5_2(
         KC_NO, KC_CIRC, KC_PLUS, KC_ASTR, KC_NO,       KC_NO, KC_NO, KC_6, KC_DLR, KC_NO, 
         KC_4,  KC_3,  KC_2,  KC_1,  KC_NO,             KC_NO, KC_0,  KC_7,  KC_8,  KC_9, 
-        KC_DLR, KC_HASH, KC_AT, KC_5,  KC_NO,          KC_NO, KC_NO, KC_UNDS, KC_ASTR, KC_NO, 
+        KC_DLR, KC_HASH, KC_AT, KC_5,  KC_NO,          KC_NO, KC_NO, KC_UNDS, KC_ASTR, KC_CAPS, 
         KC_NO, KC_NO,                                  KC_SPC, KC_NO
     ),
     [3] = LAYOUT_split_3x5_2(
