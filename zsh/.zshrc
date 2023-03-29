@@ -32,6 +32,7 @@ alias dot="cd ~/.dotfiles && v ."
 alias keeb="cd && cd ~/.dotfiles/keyboard/qmk_firmware/keyboards/ferris/keymaps/default && v ."
 alias setbg="feh --bg-fill"
 alias qflash="qmk compile && qmk flash"
+alias jwtsecret="openssl rand -base64 32"
 
 # window manager
 alias wm-r="bspc wm -r"
