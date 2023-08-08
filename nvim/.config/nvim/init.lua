@@ -24,6 +24,8 @@ set.wrap=true
 set.cmdheight=1
 set.undodir = os.getenv('HOME') .. '/.vim/undodir'
 set.undofile = true
+set.splitbelow=true
+set.splitright=true
 
 vim.g.mapleader=" "
 vim.g.dylan_colorscheme = "catppuccin"
@@ -38,6 +40,18 @@ nnoremap('<leader>u', ':UndotreeShow<cr>')
 nnoremap('<leader>;r', ':e#<CR>')
 nnoremap('<leader>ff', ':lua vim.lsp.buf.formatting()<cr>')
 
+-- windows
+nnoremap('<leader>;v', ':vs<cr>:vertical resize 80<cr>')
+nnoremap('<leader>;h', ':sp<cr>')
+nnoremap('<C-h>', '<C-w>h')
+nnoremap('<C-j>', '<C-w>j')
+nnoremap('<C-k>', '<C-w>k')
+nnoremap('<C-l>', '<C-w>l')
+nnoremap('<C-Left>', ':vertical resize +3<cr>')
+nnoremap('<C-Right>', ':vertical resize -3<cr>')
+nnoremap('<C-Up>', ':resize +3<cr>')
+nnoremap('<C-Down>', ':resize -3<cr>')
+
 -- yank to clipboard
 nnoremap('<leader>y', '\"+y')
 vnoremap('<leader>y', '\"+y')
@@ -46,16 +60,11 @@ nmap('<leader>Y', '\"+Y')
 -- delete no cut
 nnoremap('<leader>d', '\"_d')
 vnoremap('<leader>d', '\"_d')
+nnoremap('<leader>c', '\"_c')
+vnoremap('<leader>c', '\"_c')
 
 -- formatting
 nnoremap('<leader>fp', ':Prettier<cr>')
-
--- windows
-nnoremap('<leader>;v', ':Vex<cr>')
-nnoremap('<C-h>', '<C-w>h')
-nnoremap('<C-j>', '<C-w>j')
-nnoremap('<C-k>', '<C-w>k')
-nnoremap('<C-l>', '<C-w>l')
 
 -- move highlighted line
 vnoremap("J", ":m '>+1<cr>gv=gv")
@@ -65,5 +74,5 @@ vnoremap("K", ":m '<-2<cr>gv=gv")
 nnoremap('x', '"_x')
 
 -- increment/decrement
-nnoremap('+', '<C-a>')
-nnoremap('-', '<C-x>')
+nnoremap('+', '<C-x>')
+nnoremap('-', '<C-a>')

@@ -131,20 +131,15 @@ lsp.tsserver.setup {
 -- tailwind
 lsp.tailwindcss.setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+}
+
+lsp.svelte.setup {
+    cmd = { "svelteserver", "--stdio" },
+    filetypes = { "svelte" },
 }
 
 lsp.astro.setup {}
-lsp.clangd.setup {}
-
---lsp.flow.setup {
---    capabilities = capabilities,
---    on_attach = on_attach,
---}
-
---lsp.sourcekit.setup {
---    on_attach = on_attach,
---}
 
 -- diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

@@ -18,7 +18,6 @@ export GOBIN=$GOPATH/bin
 
 # Path
 export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH
-#export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server
 
 #Aliases
 alias vim="nvim"
@@ -103,3 +102,6 @@ export NVM_DIR="/home/dylan/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias luamake=/home/dylan/lua-language-server/3rd/luamake/luamake
 PATH="$HOME/.local/bin:$PATH"
+
+# Turso
+export PATH="/home/dylan/.turso:$PATH"
