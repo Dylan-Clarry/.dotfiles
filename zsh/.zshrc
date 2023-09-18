@@ -37,7 +37,10 @@ alias jwtsecret="openssl rand -base64 32"
 alias wm-r="bspc wm -r"
 alias sx-r="pkill -USR1 -x sxhkd"
 
+# dev
+alias py="python3"
 alias nrd="npm run dev"
+alias nrdb="npm run db:push"
 alias cr="cargo run"
 alias sussy="systemctl suspend"
 alias sxreload="pkill -USR1 -x sxhkd"

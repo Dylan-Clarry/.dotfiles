@@ -10,6 +10,9 @@ super + f
 # Browser Incognito
 super + p
     firefox --private-window
+# Chrome
+super + f
+    google-chrome
 # Open .
 super + o
     open .

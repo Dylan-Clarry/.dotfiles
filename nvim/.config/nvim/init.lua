@@ -39,6 +39,7 @@ nnoremap('<C-u>', '<C-u>zz')
 nnoremap('<leader>u', ':UndotreeShow<cr>')
 nnoremap('<leader>;r', ':e#<CR>')
 nnoremap('<leader>ff', ':lua vim.lsp.buf.formatting()<cr>')
+nnoremap('<leader>ca', ':lua vim.lsp.buf.code_action()<cr>')
 
 -- windows
 nnoremap('<leader>;v', ':vs<cr>:vertical resize 80<cr>')
