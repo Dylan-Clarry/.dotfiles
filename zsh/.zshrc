@@ -36,6 +36,7 @@ alias jwtsecret="openssl rand -base64 32"
 # window manager
 alias wm-r="bspc wm -r"
 alias sx-r="pkill -USR1 -x sxhkd"
+alias fbg="feh --bg-fill"
 
 # dev
 alias py="python3"
@@ -68,8 +69,10 @@ alias mkdir="mkdir -p"
 alias safemode="fbg ~/wallpapers/bg_02.jpg"
 alias coomer="fbg ~/wallpapers/bg_01.jpg"
 alias lulwut="fbg ~/wallpapers/lulwut.png"
-alias lucifer="fbg ~/wallpapers/lucifer.jpg"
+alias lucy="fbg ~/wallpapers/lucifer.jpg"
+alias bigd="fbg ~/wallpapers/bigd.png"
 alias monsters="fbg ~/wallpapers/monsters.webp"
+alias red="fbg ~/wallpapers/red.png"
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
