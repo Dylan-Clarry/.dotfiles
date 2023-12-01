@@ -66,6 +66,7 @@ vnoremap('<leader>c', '\"_c')
 
 -- formatting
 nnoremap('<leader>fp', ':Prettier<cr>')
+nnoremap('<leader>ff', ':lua vim.lsp.buf.format()<cr>')
 
 -- move highlighted line
 vnoremap("J", ":m '>+1<cr>gv=gv")

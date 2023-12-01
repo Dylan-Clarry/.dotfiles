@@ -50,11 +50,12 @@ local on_attach = function(client, bufnr)
 
     if client.server_capabilities.document_formatting then
         vim.cmd([[
-        augroup formatting
-        autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
-        autocmd BufWritePre <buffer> lua OrganizeImports(1000)
-        augroup END
+            augroup formatting
+            autocmd! * <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
+            autocmd BufWritePre <buffer> lua OrganizeImports(1000)
+            augroup END
         ]])
     end
 end
@@ -99,7 +100,7 @@ lsp.gopls.setup {
     on_attach = on_attach,
     settings = {
         gopls = {
-            gofumpt = true
+            gofumpt = true,
         }
     }
 }
