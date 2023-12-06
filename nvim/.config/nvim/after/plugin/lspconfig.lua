@@ -72,28 +72,6 @@ local enable_format_on_save = function(_, bufnr)
     })
 end
 
--- lua
-lsp.sumneko_lua.setup {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-        --enable_format_on_save(client, bufnr)
-    end,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- language server recognize 'vim' global
-                globals = { 'vim' },
-            },
-            workspace = {
-                -- make server aware of nvim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
-            },
-        },
-    },
-}
-
 -- golang
 lsp.gopls.setup {
     capabilities = capabilities,

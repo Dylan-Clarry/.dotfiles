@@ -1,10 +1,9 @@
-require('catppuccin').setup({})
+require('catppuccin').setup({
+    transparent_background = true,
+})
 
-function setColorScheme(colorscheme)
+function gruvbox(colorscheme)
     vim.g.gruvbox_transparent = true
-    vim.g.catppuccin_flavour = "mocha"
-    vim.g.catppuccin_transparent = true
-    vim.g.catppuccin_transparent_sidebar = true
 
     vim.cmd("colorscheme " .. colorscheme)
 
@@ -14,8 +13,18 @@ function setColorScheme(colorscheme)
     vim.cmd([[highlight SignColumn ctermfg=none]])
 end
 
+function catppuccin(color)
+    color = color or "catppuccin"
+    vim.cmd.colorscheme(color)
+    vim.g.catppuccin_flavour = "mocha"
+    vim.g.catppuccin_transparent = true
+    vim.g.catppuccin_transparent_sidebar = true
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+
 -- color set in base init.lua
-setColorScheme(vim.g.dylan_colorscheme)
+catppuccin()
 
 -- colrizer (color preview)
 require('colorizer').setup()

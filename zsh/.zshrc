@@ -16,18 +16,20 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
+# dotnet path
+export DOTNET_ROOT=$HOME/.dotnet
+
 # Path
-export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH
+export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH:$DOTNET_ROOT:$DOTNET_/tools
 
 #Aliases
-alias vim="nvim"
 alias v="nvim"
 alias t="tmux"
 alias tmain="tmux attach-session -t main"
 alias vrc="cd ~/.dotfiles/nvim/.config/nvim/ && v ."
 alias zrc="vim ~/.zshrc"
 alias zsrc="source ~/.zshrc"
-alias dot="cd ~/.dotfiles && v ."
+alias dot="cd ~/.dotfiles"
 alias keeb="cd && cd ~/.dotfiles/keyboard/qmk_firmware/keyboards/ferris/keymaps/default && v ."
 alias setbg="feh --bg-fill"
 alias qflash="qmk compile && qmk flash"
@@ -62,7 +64,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 alias l=$lsauto
 alias ll=$lsauto
-alias la="l -lhF"
+alias la="l -ahF"
 alias mkdir="mkdir -p"
 
 # wallpaper
