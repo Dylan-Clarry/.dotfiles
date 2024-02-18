@@ -34,7 +34,7 @@ cmp.setup({
 
 -- LSP server setup
 local on_attach = function(client, bufnr)
-    print(client.name, "attached")
+    -- print(client.name, "attached")
 
     -- mappings
     -- see ':h vim.lsp.*' for documentation of the below functions
@@ -81,6 +81,40 @@ lsp.gopls.setup {
             gofumpt = true,
         }
     }
+}
+
+-- html/templ
+lsp.html.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {
+        "html",
+        "templ"
+    }
+}
+
+-- htmx
+lsp.htmx.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {
+        "html",
+        "templ"
+    }
+}
+
+-- c#
+lsp.omnisharp.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = { "dotnet", "/home/dylan/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+    enable_editorconfig_support = true,
+    enable_ms_build_load_projects_on_demand = false,
+    enable_roslyn_analyzers = false,
+    organize_imports_on_format = true,
+    enable_import_completion = true,
+    sdk_include_prereleases = true,
+    analyze_open_documents_only = false,
 }
 
 -- rust analyzer

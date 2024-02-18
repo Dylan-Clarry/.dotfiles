@@ -7,6 +7,7 @@ local xnoremap = Keymap.xnoremap
 local nmap = Keymap.nmap
 
 vim.scriptencoding='utf-8'
+vim.filetype.add({ extension = { templ = "templ"} })
 set.encoding='utf-8'
 set.fileencoding='utf-8'
 
@@ -20,7 +21,7 @@ set.expandtab=true
 set.hlsearch=false
 set.incsearch=true
 set.smartindent=true
-set.wrap=true
+set.wrap=false
 set.cmdheight=1
 set.undodir = os.getenv('HOME') .. '/.vim/undodir'
 set.undofile = true

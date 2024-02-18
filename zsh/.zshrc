@@ -20,14 +20,14 @@ export GOBIN=$GOPATH/bin
 export DOTNET_ROOT=$HOME/.dotnet
 
 # Path
-export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH:$DOTNET_ROOT:$DOTNET_/tools
+export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
 #Aliases
 alias v="nvim"
 alias t="tmux"
 alias tmain="tmux attach-session -t main"
 alias vrc="cd ~/.dotfiles/nvim/.config/nvim/ && v ."
-alias zrc="vim ~/.zshrc"
+alias zrc="v ~/.zshrc"
 alias zsrc="source ~/.zshrc"
 alias dot="cd ~/.dotfiles"
 alias keeb="cd && cd ~/.dotfiles/keyboard/qmk_firmware/keyboards/ferris/keymaps/default && v ."
@@ -53,6 +53,7 @@ alias audiosrc="pavucontrol"
 
 # git
 alias gaa="git add . && git status"
+alias gra="git restore --staged ./*"
 alias gc="git commit -m"
 alias gp="git push"
 alias gaac="gaa && gc \"quick push\" && gp origin main"
