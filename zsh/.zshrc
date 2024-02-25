@@ -20,7 +20,7 @@ export GOBIN=$GOPATH/bin
 export DOTNET_ROOT=$HOME/.dotnet
 
 # Path
-export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export PATH=$PATH:$GOBIN:$GOROOT/bin:$HOME/.personal/sumneko/bin/lua-language-server:$HOME/.local/bin:$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:/usr/local/bin
 
 #Aliases
 alias v="nvim"

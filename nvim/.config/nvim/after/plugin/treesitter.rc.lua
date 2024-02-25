@@ -1,19 +1,10 @@
 local configs = require'nvim-treesitter.configs'
 configs.setup {
-    ensure_installed = "all", -- "maintained" was not working for whatever reason
-    highlight = { -- enable highlighting
+    ensure_installed = { "help", "javascript", "typescript", "c", "lua", "go", "html", "css" },
+    highlight = {
       enable = true,
+      additional_vim_regex_highlighting = false,
     },
-    indent = {
-      enable = false, -- default is disabled anyways
-    },
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
-            scope_incremental = '<c-s>',
-            node_decremental = '<c-backspace>',
-        },
-    },
+    sync_install = false,
+    auto_install = true,
 }

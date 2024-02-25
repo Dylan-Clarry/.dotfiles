@@ -3,6 +3,7 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local util = require "lspconfig/util"
 
 local Keymap = require('dylan.keymap')
 local nnoremap = Keymap.nnoremap
@@ -72,13 +73,32 @@ local enable_format_on_save = function(_, bufnr)
     })
 end
 
+lsp.lua_ls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+
 -- golang
 lsp.gopls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
+    cmd = {"gopls"},
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
         gopls = {
+            completeUnimported = true,
             gofumpt = true,
+            analyses = {
+                unusedparams = true,
+            },
         }
     }
 }
